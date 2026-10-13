@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1790523373318,
+      "tag": "0000_early_kinsey_walden",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1790523507872,
+      "tag": "0001_graceful_kree",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1790524586261,
+      "tag": "0002_spotty_dakota_north",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1790525138156,
+      "tag": "0003_narrow_apocalypse",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1790525696973,
+      "tag": "0004_tense_warpath",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1790527651187,
+      "tag": "0005_living_venus",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1790528371473,
+      "tag": "0006_chubby_tarot",
+      "breakpoints": true
+    }
+  ]
+}

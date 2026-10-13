@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="theme-color" content="#1b3b2f" />
+    <meta name="description" content="NutriAI — practical, personalized nutrition support for everyday wellness." />
+    <title>NutriAI · Everyday wellness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const analyticsEndpoint = "%VITE_ANALYTICS_ENDPOINT%";
+      const analyticsWebsiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
+      if (
+        analyticsEndpoint &&
+        analyticsEndpoint !== "%VITE_ANALYTICS_ENDPOINT%" &&
+        analyticsWebsiteId &&
+        analyticsWebsiteId !== "%VITE_ANALYTICS_WEBSITE_ID%"
+      ) {
+        const script = document.createElement("script");
+        script.defer = true;
+        script.src = `${analyticsEndpoint}/umami`;
+        script.dataset.websiteId = analyticsWebsiteId;
+        document.head.appendChild(script);
+      }
+    </script>
+  </body>
+</html>

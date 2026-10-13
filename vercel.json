@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "buildCommand": "node node_modules/vite/bin/vite.js build",
+  "outputDirectory": "dist/public",
+  "installCommand": "npm install --legacy-peer-deps",
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@5",
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/trpc/:path*",
+      "destination": "/api/trpc/[...trpc]"
+    },
+    {
+      "source": "/api/oauth/callback",
+      "destination": "/api/oauth/callback"
+    },
+    {
+      "source": "/manus-storage/:path*",
+      "destination": "/api/manus-storage/[...path]"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,PUT,DELETE,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
+    }
+  ]
+}
