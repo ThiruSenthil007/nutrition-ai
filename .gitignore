@@ -116,3 +116,5 @@ client/public/__manus__/version.json
 dist_check/
 vitest-indian.log
 test-dish.jpg
+
+.vercel
