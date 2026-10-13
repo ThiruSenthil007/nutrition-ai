@@ -1,28 +1,24 @@
 {
   "version": 2,
   "installCommand": "pnpm install --no-frozen-lockfile",
-  "buildCommand": "vite build",
+  "buildCommand": "vite build && esbuild server/serverless.ts --bundle --platform=node --format=esm --packages=external --outfile=api/index.js",
   "outputDirectory": "dist/public",
   "functions": {
-    "api/**/*.ts": {
+    "api/index.js": {
       "maxDuration": 30
     }
   },
   "rewrites": [
     {
-      "source": "/api/trpc/:path*",
-      "destination": "/api/trpc/[...trpc]"
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
     },
     {
-      "source": "/api/oauth/callback",
-      "destination": "/api/oauth/callback"
+      "source": "/manus-storage/(.*)",
+      "destination": "/api/index.js"
     },
     {
-      "source": "/manus-storage/:path*",
-      "destination": "/api/manus-storage/[...path]"
-    },
-    {
-      "source": "/((?!api/).*)",
+      "source": "/((?!api/|manus-storage/).*)",
       "destination": "/index.html"
     }
   ],
