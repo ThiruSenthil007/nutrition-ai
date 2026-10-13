@@ -1,0 +1,6 @@
+render.yaml
+template.json
+dist_check/
+.manus-logs/
+vitest-indian.log
+test-dish.jpg
