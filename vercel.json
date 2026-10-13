@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "node node_modules/vite/bin/vite.js build",
+  "buildCommand": "vite build",
   "outputDirectory": "dist/public",
-  "installCommand": "npm install --legacy-peer-deps",
   "functions": {
     "api/**/*.ts": {
-      "runtime": "@vercel/node@5",
       "maxDuration": 30,
       "memory": 1024
     }
